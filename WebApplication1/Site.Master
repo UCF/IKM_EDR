@@ -1,0 +1,95 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="WebApplication1.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <!-- ADD UCF HEADER -->
+    <script type="text/javascript" src="http://universityheader.ucf.edu/bar/js/university-header.js"></script>
+    <!-- END UCF HEADER -->
+    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.css" /> 
+    <link href="~/css/Site.css" rel="stylesheet" type="text/css" />		
+    <!-- Bootstrap style overrides for UCF Header -->
+    <style>
+        #UCFHBSearch_ucf fieldset #q {
+	        line-height: 11px;
+	        color: #000000;
+	        padding: 2px!important;
+	        font-size: 11px;
+	        font-family: 'Lucida Grande',sans-serif;
+	        height: 13px;
+	        border-radius: 0;
+	        webkit-border-radius: 0;
+	        moz-border-radius: 0;
+	        margin-bottom: 0;
+	        margin-top: 1px;
+        }
+
+        select#UCFHBHeaderLinks {
+	        height: 18px;
+	        line-height: 18px;
+	        font-size: 11px;
+	        color: #000000;
+	        font-family: 'Lucida Grande', sans-serif;
+	        border-radius: 0;
+	        webkit-border-radius: 0;
+	        moz-border-radius: 0;
+	        margin-bottom: 0;
+	        margin-top: 1px;
+	        padding: 0;
+        }
+
+    </style>	
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <div class="container"> 
+            <div class="row-fluid">
+                <div class="span12">        
+                    <div id="header" class="header">
+                        <h1>Institutional Knowledge Management</h1>
+                    </div>
+                </div>
+            </div> 
+            <div class="row-fluid"> 
+                <div class="span3"> 
+                  <asp:ContentPlaceHolder ID="SidebarContent" runat="server"/>
+                </div> 
+                <div class="span9"> 
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+                </div> 
+            </div>
+         </div>
+        <div id="footer-wrap">
+                <div id="footer" class="footer">
+                    <div class="row-fluid">
+                        <div class="span12">        
+                            <div class="span3">
+                                <img src="img/50th-220x80.png" alt="ucf logo"/>
+                            </div>
+                            <div class="span4 offset1">
+                                    <h3>Contact Us</h3>
+                                    Institutional Knowledge Management<br />
+                                    12424 Research Parkway<br />
+                                    Suite 215 - Orlando, FL 32826-3269<br />
+                                    407.823.5061
+                            </div>
+                            <div id="footer_navigation" class="span4">
+                                    <form class="form-search">
+                                      <h3>Search IKM</h3>
+                                      <div class="input-append">
+                                        <input type="text" class="span8 search-query">
+                                        <button type="submit" class="btn">Search</button>
+                                      </div>
+                                    </form>
+
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+        </div>
+    <script type="text/javascript"  src='<%# ResolveUrl ("~/Js/jquery-1.2.3.min.js") %>'></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script> 
+</body>
+</html>

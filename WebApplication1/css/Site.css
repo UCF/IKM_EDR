@@ -1,0 +1,378 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    background:url("https://www.ucf.edu/img/gradient.png") repeat-x top left #fff;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, Sans-Serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS
+----------------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: black;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 2px;
+}
+
+h1
+{
+    font-family: georgia,serif;
+    font-size: 2em;
+}
+
+h2
+{
+    color: #F3C00B;
+    font-family: "Arial Black",arial,sans-serif;
+    font-size: 1.6em;
+    line-height: 1.25em;
+    margin: 0;
+    padding: 0 0 0.5em;
+}
+
+h3
+{
+  color: #CB5702;
+    font-family: "Trebuchet MS",sans-serif;
+    font-size: 1.5em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h4
+{
+    font-size: 1.1em;
+    font-weight:bold;
+    color:#696969;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+#wrap {
+    margin: 0 auto;
+/*    padding: 24px 0 32px;   */
+    width: 950px;
+}
+
+#header
+{
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 18px;
+    padding-bottom: 13px;
+}
+
+#contentWrapper
+{
+    margin: 0 auto;
+    overflow: auto;
+}
+
+#sidebar
+{
+    width: 200px;
+    height:auto;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    text-align: left;
+    float:left;
+}
+
+#primary_navigation 
+{
+    padding: .5em;
+}
+#primary_navigation h1 
+{
+    color: #B38C0B;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 15px;
+    margin: 0;
+    padding: 7px 0 4px;
+    text-transform: uppercase;    
+}
+#primary_navigation ul {
+    margin: 0;
+    padding: 0;
+}
+
+#primary_navigation li {
+    font-family: Verdana,sans-serif;
+    font-size: 1em;
+    list-style: none outside none;
+    margin-bottom: 7px;
+}
+
+#primary_navigation a, #primary_navigation a:visited {
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 1px dotted #999999
+}
+
+#primary_navigation a:hover, #primary_navigation a:visited:hover {
+    color: #c30202;
+}
+
+#secondary_navigation {
+    padding: .5em;
+}
+
+#secondary_navigation h1 
+{
+    color: #B38C0B;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 15px;
+    margin: 0;
+    padding: 7px 0 4px;
+    text-transform: uppercase;    
+}
+#secondary_navigation ul {
+    margin: 0;
+    padding: 0;
+}
+
+#secondary_navigation li {
+    font-family: Verdana,sans-serif;
+    font-size: 1em;
+    list-style: none outside none;
+    margin-bottom: 7px;
+}
+#secondary_navigation a, #secondary_navigation a:visited {
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 1px dotted #999999
+}
+#secondary_navigation a:hover, #secondary_navigation a:visited:hover {
+    color: #c30202;
+}
+
+#footer-wrap
+{
+    background-color:#444;
+}
+#footer 
+{
+    width: 940px;
+    color:#000000;
+    margin: 10px auto 0px auto;
+    padding: 10px 0 25px 20px;
+}
+
+#footer h3
+{
+    color:#fcd057;
+    font-family: georgia,serif;
+    font-size: 1.25em;
+}
+
+#footer_navigation ul
+{
+    margin: 0;
+    padding: 0;
+}
+    
+#footer_navigation li
+{
+    font-family: Verdana,sans-serif;
+    font-size: 1em;
+    list-style: none outside none;    
+    margin-bottom: 7px;
+}  
+ #footer_navigation a, #footer_navigation a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+#footer_navigation a:hover, #footer_navigation a:visited:hover {
+    color: #c30202;
+} 
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#3a4f63;
+    width:100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
