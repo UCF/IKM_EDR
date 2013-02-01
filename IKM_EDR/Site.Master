@@ -1,14 +1,14 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="WebApplication1.Site" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="IKM_EDR.Site" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <!-- ADD UCF HEADER -->
     <script type="text/javascript" src="http://universityheader.ucf.edu/bar/js/university-header.js"></script>
     <!-- END UCF HEADER -->
-    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.css" /> 
-    <link href="~/css/Site.css" rel="stylesheet" type="text/css" />		
+    <link type="text/css" rel="stylesheet" href="~/res/css/bootstrap.css" /> 
+    <link href="~/res/css/Site.css" rel="stylesheet" type="text/css" />		
     <!-- Bootstrap style overrides for UCF Header -->
     <style>
         #UCFHBSearch_ucf fieldset #q {
@@ -66,7 +66,7 @@
                     <div class="row-fluid">
                         <div class="span12">        
                             <div class="span3">
-                                <img src="img/50th-220x80.png" alt="ucf logo"/>
+                                <img src="res/img/50th-220x80.png" alt="ucf logo"/>
                             </div>
                             <div class="span4 offset1">
                                     <h3>Contact Us</h3>
