@@ -45,6 +45,7 @@ namespace IKM_EDR
                 newItem.InformationRequested = tb_InfoRequest.Text;
                 newItem.DeliveryMethodValue = ddl_deliveryMethod.SelectedValue;
                 newItem.DateRequired = DateTime.Parse(tb_dateRequired.Text);
+                newItem.StatusValue = "New";
 
                 context.AddToExternalDataRequests(newItem);
 
