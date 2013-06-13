@@ -127,6 +127,20 @@
         <NavigationProperty Name="DeliveryMethod" Relationship="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_DeliveryMethod" FromRole="ExternalDataRequestsItem" ToRole="DeliveryMethod" />
         <Property Name="DeliveryMethodValue" Type="Edm.String" Nullable="true" />
         <Property Name="ContentTypeID" Type="Edm.String" Nullable="true" />
+        <Property Name="Comments" Type="Edm.String" Nullable="true" />
+        <Property Name="PaymentAmount" Type="Edm.Double" Nullable="true" />
+        <Property Name="PaymentCheckNumber" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="ProjectLead" Relationship="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_ProjectLead" FromRole="ExternalDataRequestsItem" ToRole="ProjectLead" />
+        <Property Name="ProjectLeadId" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="Developers" Relationship="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_Developers" FromRole="ExternalDataRequestsItem" ToRole="Developers" />
+        <NavigationProperty Name="Status" Relationship="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_Status" FromRole="ExternalDataRequestsItem" ToRole="Status" />
+        <Property Name="StatusValue" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="CCNotifications" Relationship="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_CCNotifications" FromRole="ExternalDataRequestsItem" ToRole="CCNotifications" />
+        <Property Name="ExpirationDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="DateComplete" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="OnEDRCreate" Type="Edm.Int32" Nullable="true" />
+        <Property Name="OldStatus" Type="Edm.String" Nullable="true" />
+        <Property Name="OnEDRUpdate" Type="Edm.Int32" Nullable="true" />
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="ContentType" Type="Edm.String" Nullable="true" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
@@ -147,6 +161,12 @@
         <Property Name="Value" Type="Edm.String" Nullable="false" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
       </EntityType>
       <EntityType Name="ExternalDataRequestsStateValue">
+        <Key>
+          <PropertyRef Name="Value" />
+        </Key>
+        <Property Name="Value" Type="Edm.String" Nullable="false" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+      </EntityType>
+      <EntityType Name="ExternalDataRequestsStatusValue">
         <Key>
           <PropertyRef Name="Value" />
         </Key>
@@ -203,6 +223,30 @@
           <PropertyRef Name="Value" />
         </Key>
         <Property Name="Value" Type="Edm.String" Nullable="false" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+      </EntityType>
+      <EntityType Name="FpdatasourcesItem" m:HasStream="true">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContentTypeID" Type="Edm.String" Nullable="true" />
+        <Property Name="ContentType" Type="Edm.String" Nullable="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="CreatedBy" Relationship="Microsoft.SharePoint.DataService.FpdatasourcesItem_CreatedBy" FromRole="FpdatasourcesItem" ToRole="CreatedBy" />
+        <Property Name="CreatedById" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <NavigationProperty Name="ModifiedBy" Relationship="Microsoft.SharePoint.DataService.FpdatasourcesItem_ModifiedBy" FromRole="FpdatasourcesItem" ToRole="ModifiedBy" />
+        <Property Name="ModifiedById" Type="Edm.Int32" Nullable="true" />
+        <Property Name="CopySource" Type="Edm.String" Nullable="true" />
+        <Property Name="ApprovalStatus" Type="Edm.String" Nullable="true" />
+        <Property Name="Path" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="CheckedOutTo" Relationship="Microsoft.SharePoint.DataService.FpdatasourcesItem_CheckedOutTo" FromRole="FpdatasourcesItem" ToRole="CheckedOutTo" />
+        <Property Name="CheckedOutToId" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="VirusStatus" Type="Edm.String" Nullable="true" />
+        <Property Name="IsCurrentVersion" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Owshiddenversion" Type="Edm.Int32" Nullable="true" ConcurrencyMode="Fixed" />
+        <Property Name="Version" Type="Edm.String" Nullable="true" />
       </EntityType>
       <EntityType Name="InternalDiscussionItem">
         <Key>
@@ -407,6 +451,41 @@
         <Property Name="LengthSeconds" Type="Edm.Int32" Nullable="true" />
         <Property Name="FrameWidth" Type="Edm.Int32" Nullable="true" />
         <Property Name="FrameHeight" Type="Edm.Int32" Nullable="true" />
+      </EntityType>
+      <EntityType Name="OPSStaffCalendarItem">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContentTypeID" Type="Edm.String" Nullable="true" />
+        <Property Name="ContentType" Type="Edm.String" Nullable="true" />
+        <Property Name="Title" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
+        <NavigationProperty Name="CreatedBy" Relationship="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_CreatedBy" FromRole="OPSStaffCalendarItem" ToRole="CreatedBy" />
+        <Property Name="CreatedById" Type="Edm.Int32" Nullable="true" />
+        <NavigationProperty Name="ModifiedBy" Relationship="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_ModifiedBy" FromRole="OPSStaffCalendarItem" ToRole="ModifiedBy" />
+        <Property Name="ModifiedById" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Owshiddenversion" Type="Edm.Int32" Nullable="true" ConcurrencyMode="Fixed" />
+        <Property Name="Version" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Attachments" Relationship="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_Attachments" FromRole="OPSStaffCalendarItem" ToRole="Attachments" />
+        <Property Name="Path" Type="Edm.String" Nullable="true" />
+        <Property Name="Location" Type="Edm.String" Nullable="true" />
+        <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="AllDayEvent" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Recurrence" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="Workspace" Type="Edm.Boolean" Nullable="true" />
+        <NavigationProperty Name="Attendees" Relationship="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_Attendees" FromRole="OPSStaffCalendarItem" ToRole="Attendees" />
+        <NavigationProperty Name="Category" Relationship="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_Category" FromRole="OPSStaffCalendarItem" ToRole="Category" />
+        <Property Name="CategoryValue" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="OPSStaffCalendarCategoryValue">
+        <Key>
+          <PropertyRef Name="Value" />
+        </Key>
+        <Property Name="Value" Type="Edm.String" Nullable="false" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
       </EntityType>
       <EntityType Name="ProjectTasksItem">
         <Key>
@@ -726,41 +805,6 @@
         <NavigationProperty Name="Attachments" Relationship="Microsoft.SharePoint.DataService.TermsItem_Attachments" FromRole="TermsItem" ToRole="Attachments" />
         <Property Name="Path" Type="Edm.String" Nullable="true" />
       </EntityType>
-      <EntityType Name="UlfTestItem">
-        <Key>
-          <PropertyRef Name="Id" />
-        </Key>
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ContentTypeID" Type="Edm.String" Nullable="true" />
-        <Property Name="ContentType" Type="Edm.String" Nullable="true" />
-        <Property Name="Title" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="true" m:FC_TargetPath="SyndicationUpdated" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
-        <Property Name="Created" Type="Edm.DateTime" Nullable="true" />
-        <NavigationProperty Name="CreatedBy" Relationship="Microsoft.SharePoint.DataService.UlfTestItem_CreatedBy" FromRole="UlfTestItem" ToRole="CreatedBy" />
-        <Property Name="CreatedById" Type="Edm.Int32" Nullable="true" />
-        <NavigationProperty Name="ModifiedBy" Relationship="Microsoft.SharePoint.DataService.UlfTestItem_ModifiedBy" FromRole="UlfTestItem" ToRole="ModifiedBy" />
-        <Property Name="ModifiedById" Type="Edm.Int32" Nullable="true" />
-        <Property Name="Owshiddenversion" Type="Edm.Int32" Nullable="true" ConcurrencyMode="Fixed" />
-        <Property Name="Version" Type="Edm.String" Nullable="true" />
-        <NavigationProperty Name="Attachments" Relationship="Microsoft.SharePoint.DataService.UlfTestItem_Attachments" FromRole="UlfTestItem" ToRole="Attachments" />
-        <Property Name="Path" Type="Edm.String" Nullable="true" />
-        <Property Name="Location" Type="Edm.String" Nullable="true" />
-        <Property Name="StartTime" Type="Edm.DateTime" Nullable="true" />
-        <Property Name="EndTime" Type="Edm.DateTime" Nullable="true" />
-        <Property Name="Description" Type="Edm.String" Nullable="true" />
-        <Property Name="AllDayEvent" Type="Edm.Boolean" Nullable="true" />
-        <Property Name="Recurrence" Type="Edm.Boolean" Nullable="true" />
-        <Property Name="Workspace" Type="Edm.Boolean" Nullable="true" />
-        <NavigationProperty Name="Attendees" Relationship="Microsoft.SharePoint.DataService.UlfTestItem_Attendees" FromRole="UlfTestItem" ToRole="Attendees" />
-        <NavigationProperty Name="Category" Relationship="Microsoft.SharePoint.DataService.UlfTestItem_Category" FromRole="UlfTestItem" ToRole="Category" />
-        <Property Name="CategoryValue" Type="Edm.String" Nullable="true" />
-      </EntityType>
-      <EntityType Name="UlfTestCategoryValue">
-        <Key>
-          <PropertyRef Name="Value" />
-        </Key>
-        <Property Name="Value" Type="Edm.String" Nullable="false" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
-      </EntityType>
       <EntityType Name="UserInformationListItem">
         <Key>
           <PropertyRef Name="Id" />
@@ -920,6 +964,22 @@
         <End Role="ExternalDataRequestsItem" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsItem" Multiplicity="*" />
         <End Role="DeliveryMethod" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsDeliveryMethodValue" Multiplicity="0..1" />
       </Association>
+      <Association Name="ExternalDataRequestsItem_ProjectLead">
+        <End Role="ExternalDataRequestsItem" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsItem" Multiplicity="*" />
+        <End Role="ProjectLead" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ExternalDataRequestsItem_Developers">
+        <End Role="ExternalDataRequestsItem" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsItem" Multiplicity="*" />
+        <End Role="Developers" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="*" />
+      </Association>
+      <Association Name="ExternalDataRequestsItem_Status">
+        <End Role="ExternalDataRequestsItem" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsItem" Multiplicity="*" />
+        <End Role="Status" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsStatusValue" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ExternalDataRequestsItem_CCNotifications">
+        <End Role="ExternalDataRequestsItem" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsItem" Multiplicity="*" />
+        <End Role="CCNotifications" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="*" />
+      </Association>
       <Association Name="ExternalDataRequestsItem_CreatedBy">
         <End Role="ExternalDataRequestsItem" Type="Microsoft.SharePoint.DataService.ExternalDataRequestsItem" Multiplicity="*" />
         <End Role="CreatedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
@@ -967,6 +1027,18 @@
       <Association Name="FASItem_Attachments">
         <End Role="FASItem" Type="Microsoft.SharePoint.DataService.FASItem" Multiplicity="*" />
         <End Role="Attachments" Type="Microsoft.SharePoint.DataService.AttachmentsItem" Multiplicity="*" />
+      </Association>
+      <Association Name="FpdatasourcesItem_CreatedBy">
+        <End Role="FpdatasourcesItem" Type="Microsoft.SharePoint.DataService.FpdatasourcesItem" Multiplicity="*" />
+        <End Role="CreatedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FpdatasourcesItem_ModifiedBy">
+        <End Role="FpdatasourcesItem" Type="Microsoft.SharePoint.DataService.FpdatasourcesItem" Multiplicity="*" />
+        <End Role="ModifiedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="FpdatasourcesItem_CheckedOutTo">
+        <End Role="FpdatasourcesItem" Type="Microsoft.SharePoint.DataService.FpdatasourcesItem" Multiplicity="*" />
+        <End Role="CheckedOutTo" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
       </Association>
       <Association Name="InternalDiscussionItem_AssignedTo">
         <End Role="InternalDiscussionItem" Type="Microsoft.SharePoint.DataService.InternalDiscussionItem" Multiplicity="*" />
@@ -1079,6 +1151,26 @@
       <Association Name="MediaAssetsItem_CheckedOutTo">
         <End Role="MediaAssetsItem" Type="Microsoft.SharePoint.DataService.MediaAssetsItem" Multiplicity="*" />
         <End Role="CheckedOutTo" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="OPSStaffCalendarItem_CreatedBy">
+        <End Role="OPSStaffCalendarItem" Type="Microsoft.SharePoint.DataService.OPSStaffCalendarItem" Multiplicity="*" />
+        <End Role="CreatedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="OPSStaffCalendarItem_ModifiedBy">
+        <End Role="OPSStaffCalendarItem" Type="Microsoft.SharePoint.DataService.OPSStaffCalendarItem" Multiplicity="*" />
+        <End Role="ModifiedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
+      </Association>
+      <Association Name="OPSStaffCalendarItem_Attachments">
+        <End Role="OPSStaffCalendarItem" Type="Microsoft.SharePoint.DataService.OPSStaffCalendarItem" Multiplicity="*" />
+        <End Role="Attachments" Type="Microsoft.SharePoint.DataService.AttachmentsItem" Multiplicity="*" />
+      </Association>
+      <Association Name="OPSStaffCalendarItem_Attendees">
+        <End Role="OPSStaffCalendarItem" Type="Microsoft.SharePoint.DataService.OPSStaffCalendarItem" Multiplicity="*" />
+        <End Role="Attendees" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="*" />
+      </Association>
+      <Association Name="OPSStaffCalendarItem_Category">
+        <End Role="OPSStaffCalendarItem" Type="Microsoft.SharePoint.DataService.OPSStaffCalendarItem" Multiplicity="*" />
+        <End Role="Category" Type="Microsoft.SharePoint.DataService.OPSStaffCalendarCategoryValue" Multiplicity="0..1" />
       </Association>
       <Association Name="ProjectTasksItem_CreatedBy">
         <End Role="ProjectTasksItem" Type="Microsoft.SharePoint.DataService.ProjectTasksItem" Multiplicity="*" />
@@ -1268,26 +1360,6 @@
         <End Role="TermsItem" Type="Microsoft.SharePoint.DataService.TermsItem" Multiplicity="*" />
         <End Role="Attachments" Type="Microsoft.SharePoint.DataService.AttachmentsItem" Multiplicity="*" />
       </Association>
-      <Association Name="UlfTestItem_CreatedBy">
-        <End Role="UlfTestItem" Type="Microsoft.SharePoint.DataService.UlfTestItem" Multiplicity="*" />
-        <End Role="CreatedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
-      </Association>
-      <Association Name="UlfTestItem_ModifiedBy">
-        <End Role="UlfTestItem" Type="Microsoft.SharePoint.DataService.UlfTestItem" Multiplicity="*" />
-        <End Role="ModifiedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
-      </Association>
-      <Association Name="UlfTestItem_Attachments">
-        <End Role="UlfTestItem" Type="Microsoft.SharePoint.DataService.UlfTestItem" Multiplicity="*" />
-        <End Role="Attachments" Type="Microsoft.SharePoint.DataService.AttachmentsItem" Multiplicity="*" />
-      </Association>
-      <Association Name="UlfTestItem_Attendees">
-        <End Role="UlfTestItem" Type="Microsoft.SharePoint.DataService.UlfTestItem" Multiplicity="*" />
-        <End Role="Attendees" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="*" />
-      </Association>
-      <Association Name="UlfTestItem_Category">
-        <End Role="UlfTestItem" Type="Microsoft.SharePoint.DataService.UlfTestItem" Multiplicity="*" />
-        <End Role="Category" Type="Microsoft.SharePoint.DataService.UlfTestCategoryValue" Multiplicity="0..1" />
-      </Association>
       <Association Name="UserInformationListItem_CreatedBy">
         <End Role="UserInformationListItem" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="*" />
         <End Role="CreatedBy" Type="Microsoft.SharePoint.DataService.UserInformationListItem" Multiplicity="0..1" />
@@ -1334,10 +1406,12 @@
         <EntitySet Name="ExternalDataRequests" EntityType="Microsoft.SharePoint.DataService.ExternalDataRequestsItem" />
         <EntitySet Name="ExternalDataRequestsDeliveryMethod" EntityType="Microsoft.SharePoint.DataService.ExternalDataRequestsDeliveryMethodValue" />
         <EntitySet Name="ExternalDataRequestsState" EntityType="Microsoft.SharePoint.DataService.ExternalDataRequestsStateValue" />
+        <EntitySet Name="ExternalDataRequestsStatus" EntityType="Microsoft.SharePoint.DataService.ExternalDataRequestsStatusValue" />
         <EntitySet Name="FAS" EntityType="Microsoft.SharePoint.DataService.FASItem" />
         <EntitySet Name="FASPriority" EntityType="Microsoft.SharePoint.DataService.FASPriorityValue" />
         <EntitySet Name="FASTaskStatus" EntityType="Microsoft.SharePoint.DataService.FASTaskStatusValue" />
         <EntitySet Name="FASTeam" EntityType="Microsoft.SharePoint.DataService.FASTeamValue" />
+        <EntitySet Name="Fpdatasources" EntityType="Microsoft.SharePoint.DataService.FpdatasourcesItem" />
         <EntitySet Name="InternalDiscussion" EntityType="Microsoft.SharePoint.DataService.InternalDiscussionItem" />
         <EntitySet Name="InternalDiscussionCategory" EntityType="Microsoft.SharePoint.DataService.InternalDiscussionCategoryValue" />
         <EntitySet Name="InternalDiscussionIssueStatus" EntityType="Microsoft.SharePoint.DataService.InternalDiscussionIssueStatusValue" />
@@ -1351,6 +1425,8 @@
         <EntitySet Name="MasterPageGallery" EntityType="Microsoft.SharePoint.DataService.MasterPageGalleryItem" />
         <EntitySet Name="MasterPageGalleryCompatibleUIVersionS" EntityType="Microsoft.SharePoint.DataService.MasterPageGalleryCompatibleUIVersionSValue" />
         <EntitySet Name="MediaAssets" EntityType="Microsoft.SharePoint.DataService.MediaAssetsItem" />
+        <EntitySet Name="OPSStaffCalendar" EntityType="Microsoft.SharePoint.DataService.OPSStaffCalendarItem" />
+        <EntitySet Name="OPSStaffCalendarCategory" EntityType="Microsoft.SharePoint.DataService.OPSStaffCalendarCategoryValue" />
         <EntitySet Name="ProjectTasks" EntityType="Microsoft.SharePoint.DataService.ProjectTasksItem" />
         <EntitySet Name="RDSUpdate" EntityType="Microsoft.SharePoint.DataService.RDSUpdateItem" />
         <EntitySet Name="RDSUpdatePriority" EntityType="Microsoft.SharePoint.DataService.RDSUpdatePriorityValue" />
@@ -1371,8 +1447,6 @@
         <EntitySet Name="TechProjectPlanProject" EntityType="Microsoft.SharePoint.DataService.TechProjectPlanProjectValue" />
         <EntitySet Name="TechProjectPlanStatus" EntityType="Microsoft.SharePoint.DataService.TechProjectPlanStatusValue" />
         <EntitySet Name="Terms" EntityType="Microsoft.SharePoint.DataService.TermsItem" />
-        <EntitySet Name="UlfTest" EntityType="Microsoft.SharePoint.DataService.UlfTestItem" />
-        <EntitySet Name="UlfTestCategory" EntityType="Microsoft.SharePoint.DataService.UlfTestCategoryValue" />
         <EntitySet Name="UserInformationList" EntityType="Microsoft.SharePoint.DataService.UserInformationListItem" />
         <EntitySet Name="WorkflowHistory" EntityType="Microsoft.SharePoint.DataService.WorkflowHistoryItem" />
         <EntitySet Name="Workflows" EntityType="Microsoft.SharePoint.DataService.WorkflowsItem" />
@@ -1444,6 +1518,22 @@
           <End Role="ExternalDataRequestsItem" EntitySet="ExternalDataRequests" />
           <End Role="DeliveryMethod" EntitySet="ExternalDataRequestsDeliveryMethod" />
         </AssociationSet>
+        <AssociationSet Name="ExternalDataRequestsItem_ProjectLead" Association="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_ProjectLead">
+          <End Role="ExternalDataRequestsItem" EntitySet="ExternalDataRequests" />
+          <End Role="ProjectLead" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="ExternalDataRequestsItem_Developers" Association="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_Developers">
+          <End Role="ExternalDataRequestsItem" EntitySet="ExternalDataRequests" />
+          <End Role="Developers" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="ExternalDataRequestsItem_Status" Association="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_Status">
+          <End Role="ExternalDataRequestsItem" EntitySet="ExternalDataRequests" />
+          <End Role="Status" EntitySet="ExternalDataRequestsStatus" />
+        </AssociationSet>
+        <AssociationSet Name="ExternalDataRequestsItem_CCNotifications" Association="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_CCNotifications">
+          <End Role="ExternalDataRequestsItem" EntitySet="ExternalDataRequests" />
+          <End Role="CCNotifications" EntitySet="UserInformationList" />
+        </AssociationSet>
         <AssociationSet Name="ExternalDataRequestsItem_CreatedBy" Association="Microsoft.SharePoint.DataService.ExternalDataRequestsItem_CreatedBy">
           <End Role="ExternalDataRequestsItem" EntitySet="ExternalDataRequests" />
           <End Role="CreatedBy" EntitySet="UserInformationList" />
@@ -1491,6 +1581,18 @@
         <AssociationSet Name="FASItem_Attachments" Association="Microsoft.SharePoint.DataService.FASItem_Attachments">
           <End Role="FASItem" EntitySet="FAS" />
           <End Role="Attachments" EntitySet="Attachments" />
+        </AssociationSet>
+        <AssociationSet Name="FpdatasourcesItem_CreatedBy" Association="Microsoft.SharePoint.DataService.FpdatasourcesItem_CreatedBy">
+          <End Role="FpdatasourcesItem" EntitySet="Fpdatasources" />
+          <End Role="CreatedBy" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="FpdatasourcesItem_ModifiedBy" Association="Microsoft.SharePoint.DataService.FpdatasourcesItem_ModifiedBy">
+          <End Role="FpdatasourcesItem" EntitySet="Fpdatasources" />
+          <End Role="ModifiedBy" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="FpdatasourcesItem_CheckedOutTo" Association="Microsoft.SharePoint.DataService.FpdatasourcesItem_CheckedOutTo">
+          <End Role="FpdatasourcesItem" EntitySet="Fpdatasources" />
+          <End Role="CheckedOutTo" EntitySet="UserInformationList" />
         </AssociationSet>
         <AssociationSet Name="InternalDiscussionItem_AssignedTo" Association="Microsoft.SharePoint.DataService.InternalDiscussionItem_AssignedTo">
           <End Role="InternalDiscussionItem" EntitySet="InternalDiscussion" />
@@ -1603,6 +1705,26 @@
         <AssociationSet Name="MediaAssetsItem_CheckedOutTo" Association="Microsoft.SharePoint.DataService.MediaAssetsItem_CheckedOutTo">
           <End Role="MediaAssetsItem" EntitySet="MediaAssets" />
           <End Role="CheckedOutTo" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="OPSStaffCalendarItem_CreatedBy" Association="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_CreatedBy">
+          <End Role="OPSStaffCalendarItem" EntitySet="OPSStaffCalendar" />
+          <End Role="CreatedBy" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="OPSStaffCalendarItem_ModifiedBy" Association="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_ModifiedBy">
+          <End Role="OPSStaffCalendarItem" EntitySet="OPSStaffCalendar" />
+          <End Role="ModifiedBy" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="OPSStaffCalendarItem_Attachments" Association="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_Attachments">
+          <End Role="OPSStaffCalendarItem" EntitySet="OPSStaffCalendar" />
+          <End Role="Attachments" EntitySet="Attachments" />
+        </AssociationSet>
+        <AssociationSet Name="OPSStaffCalendarItem_Attendees" Association="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_Attendees">
+          <End Role="OPSStaffCalendarItem" EntitySet="OPSStaffCalendar" />
+          <End Role="Attendees" EntitySet="UserInformationList" />
+        </AssociationSet>
+        <AssociationSet Name="OPSStaffCalendarItem_Category" Association="Microsoft.SharePoint.DataService.OPSStaffCalendarItem_Category">
+          <End Role="OPSStaffCalendarItem" EntitySet="OPSStaffCalendar" />
+          <End Role="Category" EntitySet="OPSStaffCalendarCategory" />
         </AssociationSet>
         <AssociationSet Name="ProjectTasksItem_CreatedBy" Association="Microsoft.SharePoint.DataService.ProjectTasksItem_CreatedBy">
           <End Role="ProjectTasksItem" EntitySet="ProjectTasks" />
@@ -1791,26 +1913,6 @@
         <AssociationSet Name="TermsItem_Attachments" Association="Microsoft.SharePoint.DataService.TermsItem_Attachments">
           <End Role="TermsItem" EntitySet="Terms" />
           <End Role="Attachments" EntitySet="Attachments" />
-        </AssociationSet>
-        <AssociationSet Name="UlfTestItem_CreatedBy" Association="Microsoft.SharePoint.DataService.UlfTestItem_CreatedBy">
-          <End Role="UlfTestItem" EntitySet="UlfTest" />
-          <End Role="CreatedBy" EntitySet="UserInformationList" />
-        </AssociationSet>
-        <AssociationSet Name="UlfTestItem_ModifiedBy" Association="Microsoft.SharePoint.DataService.UlfTestItem_ModifiedBy">
-          <End Role="UlfTestItem" EntitySet="UlfTest" />
-          <End Role="ModifiedBy" EntitySet="UserInformationList" />
-        </AssociationSet>
-        <AssociationSet Name="UlfTestItem_Attachments" Association="Microsoft.SharePoint.DataService.UlfTestItem_Attachments">
-          <End Role="UlfTestItem" EntitySet="UlfTest" />
-          <End Role="Attachments" EntitySet="Attachments" />
-        </AssociationSet>
-        <AssociationSet Name="UlfTestItem_Attendees" Association="Microsoft.SharePoint.DataService.UlfTestItem_Attendees">
-          <End Role="UlfTestItem" EntitySet="UlfTest" />
-          <End Role="Attendees" EntitySet="UserInformationList" />
-        </AssociationSet>
-        <AssociationSet Name="UlfTestItem_Category" Association="Microsoft.SharePoint.DataService.UlfTestItem_Category">
-          <End Role="UlfTestItem" EntitySet="UlfTest" />
-          <End Role="Category" EntitySet="UlfTestCategory" />
         </AssociationSet>
         <AssociationSet Name="UserInformationListItem_CreatedBy" Association="Microsoft.SharePoint.DataService.UserInformationListItem_CreatedBy">
           <End Role="UserInformationListItem" EntitySet="UserInformationList" />
