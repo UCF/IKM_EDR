@@ -1,21 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="IKM_EDR.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script src="res/js/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="/res/js/jquery-1.4.1.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SidebarContent" runat="server">
-          <div id="primary_navigation">
-                <h1>More Information:</h1>
-                <ul>
-                    <li><a href="http://www.iroffice.ucf.edu/home.html">About <abbr title="Instituational Knowledge Management">IKM</abbr> </a></li>
-                </ul>
-            </div>
            <div id="secondary_navigation">
                 <h1>Other Data Sources:</h1>
                 <ul>
-                    <li><a href="http://www.iroffice.ucf.edu/character/current.html">Facts at a Glance</a></li>
-                    <li><a href="http://www.iroffice.ucf.edu/character/honorscutpoints_grd_clss_std.html">Graduation Data</a></li>
-                    <li><a href="http://www.iroffice.ucf.edu/degrees/degreesconferred.html">Degrees Awarded</a></li>
-                    <li><a href="http://www.iroffice.ucf.edu/enrollment/index.html">Enrollment Data</a></li>
+                    <li><a href="http://ikm.ucf.edu/academic-reports/enrollment/">Enrollment Statistics</a></li>
+                    <li><a href="http://ikm.ucf.edu/academic-reports-2/grad-honors-gpa-standing/">Grad Honors GPA & Standing</a></li>
+                    <li><a href="http://tuitionfees.smca.ucf.edu/">Tuition and Fees</a></li>
+                    <li><a href="http://ikm.ucf.edu/academic-reports/ucf-current-facts/">UCF Current Facts</a></li>
+                    <li><a href="http://ikm.ucf.edu/ucf-degrees-awarded/">UCF Degrees Awarded</a></li>
                 </ul>
             </div>
 
@@ -28,7 +26,7 @@
     <asp:MultiView ID="mv_page" runat="server">
         <asp:View ID="formView" runat="server">
         <h3>Information Requests</h3>
-     <p>Please fill out this form to begin the request process. Be as specific as possible with your request.  Allow up to 10 working days for your request to be completed.  Please note that for requests from entities outside of UCF their may be a fee assessed for your request.</p>
+     <p>Please complete and submit the form below to being the information request process. Be as specific as possible with your request.  Please note a fee may be assessed for requests from entities outside of UCF.</p>
         <div class="row-fluid">
             <div class="span9">
                 <asp:ValidationSummary ID="valsum_main" runat="server" DisplayMode="BulletList" CssClass="alert-error" ValidationGroup="valgrp_main" />
@@ -187,7 +185,7 @@
             <div class="span3">
                <label class="control-label" for="tb_dateRequired">Date Required</label> 
                <div class="controls"> 
-                 <asp:TextBox ID="tb_dateRequired" runat="server" CssClass="input-medium" type="date" />
+                 <asp:TextBox ID="tb_dateRequired" runat="server" CssClass="input-medium" ClientIDMode="Static" />
                </div>    
             </div>
             <div class="span3">
@@ -223,10 +221,15 @@
         </asp:View>
         <asp:View ID="confirmView" runat="server">
             <h3>Congratulations!</h3>
-            <p>Your request has been submitted. You will be contacted by our office in 'some amount of time'.</p>
+            <p>Your request has been submitted. You will be contacted by our office in within two business days.</p>
         </asp:View>
     </asp:MultiView>
     </ContentTemplate>
 </asp:UpdatePanel>
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $("#tb_dateRequired").datepicker();
+        });
+    </script>
         </form>
 </asp:Content>

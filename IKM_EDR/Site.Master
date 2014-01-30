@@ -5,7 +5,7 @@
 <head id="Head1" runat="server">
     <title></title>
     <!-- ADD UCF HEADER -->
-    <script type="text/javascript" src="http://universityheader.ucf.edu/bar/js/university-header.js"></script>
+    <script type="text/javascript" src="//universityheader.ucf.edu/bar/js/university-header.js"></script>
     <!-- END UCF HEADER -->
     <link type="text/css" rel="stylesheet" href="~/res/css/bootstrap.css" /> 
     <link href="~/res/css/Site.css" rel="stylesheet" type="text/css" />		

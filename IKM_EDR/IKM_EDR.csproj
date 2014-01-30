@@ -59,6 +59,7 @@
     <Content Include="res\css\bootstrap-responsive.min.css" />
     <Content Include="res\css\bootstrap.css" />
     <Content Include="res\css\bootstrap.min.css" />
+    <Content Include="res\css\jquery-ui-1.10.4.custom.min.css" />
     <Content Include="res\css\Site.css" />
     <Content Include="res\img\50th-220x80.png" />
     <Content Include="res\img\50th-logo4c_horiz.jpg" />
