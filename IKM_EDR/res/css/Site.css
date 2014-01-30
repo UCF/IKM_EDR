@@ -376,3 +376,8 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+
+.checkbox label
+{
+    display: inline;   
+}
