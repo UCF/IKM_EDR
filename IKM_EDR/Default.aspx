@@ -26,7 +26,7 @@
     <asp:MultiView ID="mv_page" runat="server">
         <asp:View ID="formView" runat="server">
         <h3>Information Requests</h3>
-     <p>Please complete and submit the form below to being the information request process. Be as specific as possible with your request.  Please note a fee may be assessed for requests from entities outside of UCF.</p>
+     <p>Please complete and submit the form below to begin the information request process. Be as specific as possible with your request.  Please note a fee may be assessed for requests from entities outside of UCF.</p>
         <div class="row-fluid">
             <div class="span9">
                 <asp:ValidationSummary ID="valsum_main" runat="server" DisplayMode="BulletList" CssClass="alert-error" ValidationGroup="valgrp_main" />
