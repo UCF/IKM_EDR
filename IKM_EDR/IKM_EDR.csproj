@@ -66,10 +66,15 @@
     <Content Include="res\img\50th-logo4c_horiz.png" />
     <Content Include="res\img\glyphicons-halflings-white.png" />
     <Content Include="res\img\glyphicons-halflings.png" />
+    <Content Include="res\img\gradient.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\js\bootstrap.js" />
     <Content Include="res\js\bootstrap.min.js" />
     <Content Include="res\js\jquery-1.4.1-vsdoc.js" />
-    <Content Include="res\js\jquery-1.4.1.js" />
+    <Content Include="res\js\jquery-1.4.1.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\js\jquery-1.4.1.min.js" />
     <None Include="Service References\IKM\Reference.datasvcmap">
       <Generator>DataServiceClientGenerator</Generator>

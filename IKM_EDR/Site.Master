@@ -7,8 +7,8 @@
     <!-- ADD UCF HEADER -->
     <script type="text/javascript" src="//universityheader.ucf.edu/bar/js/university-header.js"></script>
     <!-- END UCF HEADER -->
-    <link type="text/css" rel="stylesheet" href="~/res/css/bootstrap.css" /> 
-    <link href="~/res/css/Site.css" rel="stylesheet" type="text/css" />		
+    <link type="text/css" rel="stylesheet" href="res/css/bootstrap.css" /> 
+    <link href="res/css/Site.css" rel="stylesheet" type="text/css" />		
     <!-- Bootstrap style overrides for UCF Header -->
     <style>
         #UCFHBSearch_ucf fieldset #q {
@@ -89,7 +89,6 @@
                     </div> 
                 </div>
         </div>
-    <script type="text/javascript"  src='<%# ResolveUrl ("~/Js/jquery-1.2.3.min.js") %>'></script>
-    <script type="text/javascript" src="/res/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="res/js/bootstrap.min.js"></script> 
 </body>
 </html>
