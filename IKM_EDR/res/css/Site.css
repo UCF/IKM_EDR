@@ -381,3 +381,25 @@ div.accountInfo
 {
     display: inline;   
 }
+
+#updateProgressDiv
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right:0px;
+    bottom: 0px;
+    z-index: 98;
+    background-color: White;
+}
+
+#updateProgressImg
+{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -128px;
+    margin-top: -15px;
+    display:block;
+    z-index: 99;
+}

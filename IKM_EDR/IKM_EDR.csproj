@@ -64,6 +64,7 @@
     <Content Include="res\img\50th-220x80.png" />
     <Content Include="res\img\50th-logo4c_horiz.jpg" />
     <Content Include="res\img\50th-logo4c_horiz.png" />
+    <Content Include="res\img\ajax-loader.gif" />
     <Content Include="res\img\glyphicons-halflings-white.png" />
     <Content Include="res\img\glyphicons-halflings.png" />
     <Content Include="res\img\gradient.png">

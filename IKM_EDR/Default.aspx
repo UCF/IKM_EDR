@@ -226,6 +226,13 @@
     </asp:MultiView>
     </ContentTemplate>
 </asp:UpdatePanel>
+<asp:UpdateProgress ID="up_progress" runat="server" AssociatedUpdatePanelID="up_main" DynamicLayout="true" DisplayAfter="0">
+    <ProgressTemplate>
+        <div id="updateProgressDiv>
+            <asp:Image ID="updateProgressImg" runat="server" ImageUrl="~/res/img/ajax-loader.gif" AlternateText="Loading ..." ToolTip="Loading ..." />
+        </div>
+    </ProgressTemplate>
+</asp:UpdateProgress>
     <script type="text/javascript" language="javascript">
         $(function () {
             $("#tb_dateRequired").datepicker();
