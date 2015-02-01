@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -18,7 +19,7 @@ namespace IKM_EDR
         {
             mv_page.ActiveViewIndex = 0;
 
-            context = new IKMDataContext(new Uri("https://hub.smca.ucf.edu/sites/hub/IKM/_vti_bin/listdata.svc"));
+            context = new IKMDataContext(new Uri(ConfigurationManager.AppSettings["sp_service_url"]));
             context.Credentials = CredentialCache.DefaultNetworkCredentials;
         }
 
