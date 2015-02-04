@@ -101,6 +101,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Service References\IKM\service1.edmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -134,9 +135,6 @@
     <ServiceReferenceMetadataStorage Include="Service References\IKM\">
       <Type>datasvcmap</Type>
     </ServiceReferenceMetadataStorage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\IKM\service.edmx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

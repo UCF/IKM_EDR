@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bf7f8be7-3f94-46db-8c1e-5df0572ed907" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
   <MetadataSources>
-    <MetadataSource Address="https://hub.smca.ucf.edu/sites/hub/IKM/_vti_bin/listdata.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://share.ikm.ucf.edu/_vti_bin/ListData.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="5e0aba78-965e-4bc8-bb85-6dba593c7df9" SourceId="1" SourceUrl="https://hub.smca.ucf.edu/sites/hub/IKM/_vti_bin/listdata.svc" />
+    <MetadataFile FileName="service1.edmx" MetadataType="Edmx" ID="3020e7e2-081c-44d4-81d5-1625f4dc2da1" SourceId="1" SourceUrl="https://share.ikm.ucf.edu/_vti_bin/ListData.svc" />
   </Metadata>
   <Extensions />
+  <Parameters />
 </ReferenceGroup>
